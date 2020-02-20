@@ -1,0 +1,13 @@
+[Unit]
+Description=Unbound DNS server
+Documentation=man:unbound(8)
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/local/sbin/unbound -c /usr/local/unbound/unbound.conf -d
+ExecReload=/bin/kill -HUP $MAINPID
+PIDFile=/run/unbound.pid
+
+[Install]
+WantedBy=multi-user.target
