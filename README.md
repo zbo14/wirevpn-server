@@ -2,6 +2,8 @@
 
 Some scripts and config files to run a WireGuard VPN server on Ubuntu.
 
+The VPN host runs an Unbound DNS server to handle client requests/prevent [DNS leaking](https://en.wikipedia.org/wiki/DNS_leak). By default, the VPN queries upstream DNS servers at Quad9/Cloudflare and sends requests over TLS.
+
 ## Install
 
 `$ sh scripts/install.sh`
